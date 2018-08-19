@@ -1,16 +1,12 @@
 const electron = require('electron');
-const {app, BrowserWindow} = electron;
+const {app, tray, BrowserWindow} = electron;
+const menubar = require('./menubar');
 
 // Reload when webpack watches changes in ./app/
 require('electron-reload')(__dirname);
 
-// To avoid being garbage collected
-let mainWindow;
+const mb = menubar();
 
-app.on('ready', () => {
-
-    mainWindow = new BrowserWindow({width: 800, height: 600});
-
-    mainWindow.loadURL(`file://${__dirname}/app/index.html`);
-
+mb.on('ready', () => {
+    console.log('app is ready');
 })
