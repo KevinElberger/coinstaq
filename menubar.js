@@ -42,7 +42,6 @@ module.exports = function create(opts) {
     // Hide dock unless specified via options
     if (app.dock && !opts.showDockIcon) app.dock.hide();
 
-    console.log(path.join(opts.dir));
     const iconPath = opts.icon || path.join(opts.dir, 'icon.png');
 
     let cachedBounds; // Needed for double-clicks
