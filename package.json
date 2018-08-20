@@ -6,7 +6,8 @@
   "scripts": {
     "bundle": "webpack --mode development",
     "serve": "electron .",
-    "start": "npm-run-all --parallel bundle serve"
+    "start": "npm-run-all --parallel bundle serve",
+    "test": "jest"
   },
   "author": "Kevin Elberger <kevelberger@gmail.com>",
   "repository": "kevelberger/coinstaq",
@@ -18,16 +19,31 @@
     "css-loader": "^0.28.10",
     "electron": "^1.8.2",
     "electron-reload": "^1.2.2",
+    "enzyme": "^3.4.4",
+    "enzyme-adapter-react-16": "^1.2.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.10",
+    "jest": "^23.5.0",
     "npm-run-all": "^4.1.2",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.11"
   },
   "dependencies": {
+    "babel-jest": "^23.4.2",
+    "babel-preset-env": "^1.7.0",
     "electron-positioner": "^3.0.1",
     "extend": "^3.0.2",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-test-renderer": "^16.4.2"
+  },
+  "babel": {
+    "presets": ["env", "react"]
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>app/src/config/setupTests.js",
+    "moduleNameMapper": {
+      "^.+\\.(css|less)$": "<rootDir>/app/src/config/styleMock.js"      
+    } 
   }
 }
