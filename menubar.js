@@ -19,7 +19,7 @@ module.exports = function create(opts) {
   if (!opts.windowPosition) opts.windowPosition = (process.platform === 'win32') ? 'trayBottomCenter' : 'trayCenter';
   if (typeof opts.showDockIcon === 'undefined') opts.showDockIcon = false;
 
-  opts.width = opts.width || 350;
+  opts.width = opts.width || 300;
   opts.height = opts.height || 400;
   opts.tooltip = opts.tooltip || '';
 

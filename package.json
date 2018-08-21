@@ -35,15 +35,19 @@
     "extend": "^3.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router-dom": "^4.3.1",
     "react-test-renderer": "^16.4.2"
   },
   "babel": {
-    "presets": ["env", "react"]
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>app/src/config/setupTests.js",
     "moduleNameMapper": {
-      "^.+\\.(css|less)$": "<rootDir>/app/src/config/styleMock.js"      
-    } 
+      "^.+\\.(css|less)$": "<rootDir>/app/src/config/styleMock.js"
+    }
   }
 }

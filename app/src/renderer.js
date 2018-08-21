@@ -1,9 +1,12 @@
-import React from 'react'
-import {render} from 'react-dom'
-import App from './App.jsx'
-import './global.css'
+import React from 'react';
+import {render} from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App.jsx';
+import './global.css';
 
 render(
-    <App/>,
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>,
     document.getElementById('app')
 )
