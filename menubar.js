@@ -15,7 +15,7 @@ module.exports = function create(opts) {
   if (typeof opts === 'string') opts = {dir: opts};
   if (!opts.dir) opts.dir = app.getAppPath();
   if (!(path.isAbsolute(opts.dir))) opts.dir = path.resolve(opts.dir);
-  if (!opts.index) opts.index = 'file://' + path.join(opts.dir, 'app/index.html');
+  if (!opts.index) opts.index = 'file://' + path.join(app.getAppPath(), 'app/index.html');
   if (!opts.windowPosition) opts.windowPosition = (process.platform === 'win32') ? 'trayBottomCenter' : 'trayCenter';
   if (typeof opts.showDockIcon === 'undefined') opts.showDockIcon = false;
 
