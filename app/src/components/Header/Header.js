@@ -21,7 +21,7 @@ class Header extends Component {
     const { active } = this.state;
 
     return (
-      <div>
+      <div id="header">
         <Menu pointing secondary id='nav'>
           <Menu.Item
             onClick={this.handleOnClick}

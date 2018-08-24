@@ -12,11 +12,10 @@
 :global body {
     display: flex;
     align-items: center;
-    justify-content: center;
     background: var(--primary-color);
     height: 100%;
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
     max-height: 400px;
     margin: auto;
 }
@@ -24,12 +23,12 @@
 :global html {
     height: 100%;
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
     max-height: 400px;
 }
 
 :global #app {
-    width: 100%;
+    width: 300px;
     height: 100%;
     font-family: Source Sans Pro, Helvetica, sans-serif;
     text-align: center;
