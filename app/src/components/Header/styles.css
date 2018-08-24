@@ -1,5 +1,6 @@
 #nav {
-  justify-content: space-around !important;
+  width: 100%;
+  display: block;
   border-bottom: none !important;
 }
 
@@ -13,5 +14,35 @@
   font-size: 12px !important;
   color: #ffffff !important;
   font-weight: 300 !important;
-  border-image: linear-gradient(to right, #9385E8, #DD7CCE) 1 stretch !important;  
+  border: none !important;
+}
+
+#nav a:not(.last) {
+  width: 33.33%;
+  padding: 12px 0 !important;
+  text-align: center;
+  display: inline-block;
+}
+
+#nav .selected:nth-child(1) ~ .item:last-child {
+  margin-left: 6% !important;
+}
+
+#nav .selected:nth-child(2) ~ .item:last-child {
+  margin-left: 40% !important;
+}
+
+#nav .selected:nth-child(3) ~ .item:last-child {
+  margin-left: 73% !important;
+}
+
+#nav a:last-child {
+  width: 20%;
+  height: 3px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: margin-left 0.2s ease !important;
+  position: relative !important;
+  float: left !important;
+  border-image: linear-gradient(to right, #9385E8, #DD7CCE) 1 stretch !important;
 }

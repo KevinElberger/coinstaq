@@ -34,9 +34,11 @@
     font-family: Source Sans Pro, Helvetica, sans-serif;
     text-align: center;
 }
+
 :global #app p {
     text-align: justify;
 }
+
 :global .hello {
     color: var(--white);
 }

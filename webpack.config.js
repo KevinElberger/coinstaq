@@ -30,12 +30,7 @@ module.exports = {
               },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
-                  loader: 'css-loader',
-                  options: {
-                    modules: true
-                  }
-                })
+                use: [ 'style-loader', 'css-loader' ]
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
@@ -46,14 +41,6 @@ module.exports = {
             }
         ]
     },
-
-    plugins: [
-        new ExtractTextPlugin({
-            filename: 'bundle.css',
-            disable: false,
-            allChunks: true
-        })
-    ],
 
     resolve: {
       extensions: ['.js', '.json', '.jsx']

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Link, withRouter } from 'react-router-dom';
 import { Menu, Segment } from 'semantic-ui-react';
-import styles from './styles.css';
+// import styles from './styles.css';
+import './styles.css';
 
 class Header extends Component {
   constructor(props) {
@@ -21,25 +22,26 @@ class Header extends Component {
 
     return (
       <div>
-        <Menu pointing secondary id={styles.nav}>
+        <Menu pointing secondary id='nav'>
           <Menu.Item
             onClick={this.handleOnClick}
             active={active === 'portfolio'}            
-            className={active === 'portfolio' ? styles.selected : styles.link}                      
+            className={active === 'portfolio' ? 'selected' : 'link' }                      
             name='portfolio'
           />
           <Menu.Item
             onClick={this.handleOnClick}
             active={active === 'dashboard'}
-            className={active === 'dashboard' ? styles.selected : styles.link}            
+            className={active === 'dashboard' ? 'selected' : 'link' }            
             name='dashboard'
           />
           <Menu.Item
             onClick={this.handleOnClick}
             active={active === 'news'}            
-            className={active === 'news' ? styles.selected : styles.link}                      
+            className={active === 'news' ? 'selected' : 'link' }                      
             name='news'
           />
+          <a className='link item last'></a>
         </Menu>
       </div>
     )
