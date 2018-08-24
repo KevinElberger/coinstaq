@@ -1,0 +1,17 @@
+#nav {
+  justify-content: space-around !important;
+  border-bottom: none !important;
+}
+
+.link {
+  cursor: pointer;
+  font-size: 12px !important;
+  color: #ffffff !important;
+}
+
+.selected {
+  font-size: 12px !important;
+  color: #ffffff !important;
+  font-weight: 300 !important;
+  border-image: linear-gradient(to right, #9385E8, #DD7CCE) 1 stretch !important;  
+}

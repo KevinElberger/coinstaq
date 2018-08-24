@@ -1,4 +1,20 @@
-/*
+#_3WU15DCjCkZZqtj9gxdeE- {
+  justify-content: space-around !important;
+  border-bottom: none !important;
+}
+
+.BSygZNTM0GHI0TmXyvtqk {
+  cursor: pointer;
+  font-size: 12px !important;
+  color: #ffffff !important;
+}
+
+._2c1HIJGGY_BEbfYEg8T48m {
+  font-size: 12px !important;
+  color: #ffffff !important;
+  font-weight: 300 !important;
+  border-image: linear-gradient(to right, #9385E8, #DD7CCE) 1 stretch !important;  
+}/*
  * Global constants goes here
  */
 :root {
@@ -9,19 +25,11 @@
 /*
  * Global CSS goes here, it requires to use :global before each style
  */
-@keyframes _1rBPX1lG5stPm_Pp6rH5cR { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(270deg, #282f47, #465589);
-    background-size: 400% 400%;
-    animation: _1rBPX1lG5stPm_Pp6rH5cR 15s ease infinite;
+    background: var(--primary-color);
     height: 100%;
     width: 100%;
     max-width: 350px;

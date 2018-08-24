@@ -18,11 +18,16 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['react']
-                }
-            },
+                exclude: /node_modules/,
+                use: [
+                  {
+                    loader: 'babel-loader',
+                    options: {
+                      presets: ['react']
+                    }
+                  }
+                ],
+              },
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({

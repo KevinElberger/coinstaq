@@ -6,14 +6,13 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Portfolio from './components/Portfolio/Portfolio';
 import News from './components/News/News';
 
-
 export default class App extends Component {
   render() {
     return (
       <div>
         <Header />
         <Switch>
-          <Route exact path="/" component={Dashboard} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/news" component={News} />
         </Switch>

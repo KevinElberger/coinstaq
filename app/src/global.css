@@ -9,19 +9,11 @@
 /*
  * Global CSS goes here, it requires to use :global before each style
  */
-@keyframes Flow { 
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-body {
+:global body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(270deg, #282f47, #465589);
-    background-size: 400% 400%;
-    animation: Flow 15s ease infinite;
+    background: var(--primary-color);
     height: 100%;
     width: 100%;
     max-width: 350px;
