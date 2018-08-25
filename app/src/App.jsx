@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Switch, Route, Link } from 'react-router-dom';
+import PageWrapper from './components/PageWrapper/PageWrapper';
 import Header from './components/Header/Header';
 import Dashboard from './components/Dashboard/Dashboard';
 import Portfolio from './components/Portfolio/Portfolio';
@@ -11,11 +12,11 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <Switch>
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/news" component={News} />
-        </Switch>
+          <Switch>
+            <Route path="/dashboard" exact component={PageWrapper(Dashboard)} />
+            <Route path="/portfolio" exact component={PageWrapper(Portfolio)} />
+            <Route path="/news" exact component={PageWrapper(News)} />
+          </Switch>
       </div>
     )
   }

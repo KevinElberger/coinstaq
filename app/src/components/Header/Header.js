@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Link, withRouter } from 'react-router-dom';
 import { Menu, Segment } from 'semantic-ui-react';
-// import styles from './styles.css';
 import './styles.css';
 
 class Header extends Component {
