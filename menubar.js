@@ -20,7 +20,7 @@ module.exports = function create(opts) {
   if (typeof opts.showDockIcon === 'undefined') opts.showDockIcon = false;
 
   opts.width = opts.width || 300;
-  opts.height = opts.height || 400;
+  opts.height = opts.height || 450;
   opts.tooltip = opts.tooltip || '';
 
   const menubar = new events.EventEmitter();
