@@ -8,6 +8,7 @@
   color: var(--white);
   font-weight: normal;
   padding-top: 10px;
+  font-family: inherit;
 }
 
 .wallet {
@@ -34,4 +35,14 @@
 
 .wallet-amount {
   color: var(--white);
+  margin-bottom: 0;
+}
+
+.wallet-diff {
+  color: #9CA6C5;
+  text-align: center;
+}
+
+.increase {
+  color: lime;
 }

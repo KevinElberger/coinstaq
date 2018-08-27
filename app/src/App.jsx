@@ -14,8 +14,8 @@ export default class App extends Component {
         <Header />
           <Switch>
             <Route path="/dashboard" exact component={PageWrapper(Dashboard)} />
-            <Route path="/portfolio" exact component={PageWrapper(Portfolio)} />
-            <Route path="/news" exact component={PageWrapper(News)} />
+            <Route path="/portfolio" component={PageWrapper(Portfolio)} />
+            <Route path="/news" component={PageWrapper(News)} />
           </Switch>
       </div>
     )
