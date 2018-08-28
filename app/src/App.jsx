@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 import Header from './components/Header/Header';
 import Dashboard from './components/Dashboard/Dashboard';
