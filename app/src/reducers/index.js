@@ -1,5 +1,7 @@
 const state = () => {
-  return [];
+  return {
+    news: []
+  };
 };
 
 export default state;
