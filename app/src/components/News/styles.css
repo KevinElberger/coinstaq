@@ -33,10 +33,16 @@
   margin-left: 8px;
 }
 
-.news-article {
+.news-articles {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+}
+
+.news-articles-wrapper {
+  height: 332px;
+  overflow: scroll;
+  position: fixed;
 }
 
 .news-header {
@@ -64,4 +70,8 @@
   margin-right: 0;
   color: var(--white) !important;
   background: transparent !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
 }

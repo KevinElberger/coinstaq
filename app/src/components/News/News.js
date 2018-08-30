@@ -1,14 +1,37 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
-import {shell} from 'electron';
+import { shell } from 'electron';
+import { getNews } from '../../utils/cryptoApi';
 import './styles.css';
 
 export default class News extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      articles: []
+    };
+    this.handleLink = this.handleLink.bind(this);
+  }
+
   handleLink(url) {
     shell.openExternal(url);
   }
 
+  componentDidMount() {
+    getNews()
+      .then(results => this.setState({ articles: results }));
+  }
+
   render() {
+    const articles = this.state.articles.map((item, i) => (
+      <div key={item.id} className='article-wrapper' onClick={ () => { this.handleLink(item.url) }}>
+        <div className='article'>
+          <img src={item.imageurl} />
+          <p className='article-title'>{item.title}</p>
+        </div>
+      </div>
+    ));
+
     return (
       <div>
         <div className='news-header'>
@@ -16,18 +39,9 @@ export default class News extends Component {
           <Button circular icon='refresh' size='mini'></Button>
           <span className='news-last-updated'>Last updated 12 minutes ago</span>
         </div>
-        <div className='news-articles'>
-          <div className='article-wrapper'>
-            <div className='article'>
-              <img src='https://images.cryptocompare.com/news/default/blokt.png' />
-              <p className='article-title'>New York Crypto Firm CabbageTech Found Guilty of Fraud, Faces Lifetime Ban</p>
-            </div>
-          </div>
-          <div className='article-wrapper'>
-            <div className='article'>
-              <img src='https://images.cryptocompare.com/news/trustnodes/a664xak5gbg.jpeg' />
-              <p className='article-title'>Continuing Uptrend Says This Week’s Technical Analysis</p>
-            </div>
+        <div className='news-articles-wrapper'>
+          <div className='news-articles'>
+            { articles }
           </div>
         </div>
       </div>
