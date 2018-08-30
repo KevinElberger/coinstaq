@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Loader } from 'semantic-ui-react';
 import { shell } from 'electron';
 import { getNews } from '../../utils/cryptoApi';
 import './styles.css';
@@ -8,7 +8,8 @@ export default class News extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: []
+      articles: [],
+      loaded: false
     };
     this.handleLink = this.handleLink.bind(this);
   }
@@ -19,10 +20,16 @@ export default class News extends Component {
 
   componentDidMount() {
     getNews()
-      .then(results => this.setState({ articles: results }));
+      .then(results => {
+        this.setState({
+          loaded: true,
+          articles: results
+        })
+      });
   }
 
   render() {
+    const { loaded } = this.state;
     const articles = this.state.articles.map((item, i) => (
       <div key={item.id} className='article-wrapper' onClick={ () => { this.handleLink(item.url) }}>
         <div className='article'>
@@ -40,9 +47,15 @@ export default class News extends Component {
           <span className='news-last-updated'>Last updated 12 minutes ago</span>
         </div>
         <div className='news-articles-wrapper'>
-          <div className='news-articles'>
-            { articles }
-          </div>
+          { loaded ? 
+            (
+            <div className='news-articles'>
+              { articles }
+            </div>
+            )
+            :
+            <Loader active inline='centered' /> 
+          }
         </div>
       </div>
     )
