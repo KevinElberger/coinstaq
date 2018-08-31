@@ -15,10 +15,30 @@ export default class News extends Component {
       updateTime: new Date().getTime() - new Date().getTime()
     };
     this.handleLink = this.handleLink.bind(this);
+    this.handleRefresh = this.handleRefresh.bind(this);
   }
 
   handleLink(url) {
     shell.openExternal(url);
+  }
+
+  handleRefresh() {
+    const { updateTime } = this.state;
+
+    if (updateTime < 60000) return;
+     
+    this.setState({ loaded: false });
+
+    getNews()
+      .then(results => {
+        this.setState({
+          loaded: true,
+          articles: results,
+          updateTime: new Date().getTime() - new Date().getTime()
+        });
+
+        this.tick(new Date().getTime());
+      });
   }
 
   componentDidMount() {
@@ -30,8 +50,24 @@ export default class News extends Component {
           loaded: true,
           articles: results,
           updateTime: new Date().getTime() - updateTime
-        })
+        });
+
+        this.tick(new Date().getTime());
       });
+  }
+
+  tick(updateTime) {
+    const oneMinute = 60000;
+
+    if (this.tickID) {
+      clearInterval(this.tickID);
+    }
+    
+    this.tickID = setInterval(() => {      
+      this.setState({
+        updateTime: new Date().getTime() - updateTime
+      });
+    }, oneMinute);
   }
 
   render() {
@@ -50,7 +86,7 @@ export default class News extends Component {
       <div>
         <div className='news-header'>
           <h3>Recent News</h3>
-          <Button circular icon='refresh' size='mini'></Button>
+          <Button circular icon='refresh' size='mini' onClick={ this.handleRefresh }></Button>
           <span className='news-last-updated'>Last updated { updateTime } ago</span>
         </div>
         <div className='news-articles-wrapper'>
