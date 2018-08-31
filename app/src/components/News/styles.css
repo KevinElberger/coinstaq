@@ -62,8 +62,6 @@
 .news-last-updated {
   font-size: 10px;
   color: #9CA6C5 !important;
-  align-self: flex-end;
-  color: var(--white);
 }
 
 .news-header button, .article button {
@@ -71,6 +69,11 @@
   margin-right: 0;
   color: var(--white) !important;
   background: transparent !important;
+}
+
+.published {
+  font-size: 10px;
+  color: #9CA6C5;
 }
 
 ::-webkit-scrollbar-corner {

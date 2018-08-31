@@ -26,7 +26,7 @@ export default class News extends Component {
     const { updateTime } = this.state;
 
     if (updateTime < 60000) return;
-     
+
     this.setState({ loaded: false });
 
     getNews()
@@ -78,6 +78,9 @@ export default class News extends Component {
         <div className='article'>
           <img src={item.imageurl} />
           <p className='article-title'>{item.title}</p>
+          <span className='published'>
+            { prettyMs(new Date().getTime() - item.published_on * 1000, { compact: true }) }
+          </span>
         </div>
       </div>
     ));
