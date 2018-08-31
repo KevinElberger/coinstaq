@@ -9,7 +9,7 @@ import News from './components/News/News';
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div id="app">
         <Header />
           <Switch>
             <Route exact path="/" render={() => (
