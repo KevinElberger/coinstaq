@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import CountUp from 'react-countup';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Button } from 'semantic-ui-react';
 import './styles.css';
 
 export default class Portfolio extends Component {
   render() {
     return (
-      <div>
+      <div id="portfolio">
         <div className="wallet">
           <h5 className="title">Your Portfolio</h5>
           <h1 className="wallet-amount">
@@ -22,6 +22,12 @@ export default class Portfolio extends Component {
             + $170.25 (22.1%)
             <Icon className="increase" name='long arrow alternate up' />
           </p>
+        </div>
+        <div className="add-wrapper">
+          <Button id="add" size='mini' labelPosition='left'>
+            <Icon name='bitcoin' />
+            Add Coin
+          </Button>
         </div>
       </div>
     )

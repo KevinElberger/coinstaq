@@ -23,9 +23,10 @@ export default class News extends Component {
   }
 
   handleRefresh() {
+    const oneMinute = 60000;
     const { updateTime } = this.state;
 
-    if (updateTime < 60000) return;
+    if (updateTime < oneMinute) return;
 
     this.setState({ loaded: false });
 

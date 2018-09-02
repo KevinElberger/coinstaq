@@ -1,3 +1,20 @@
+#add {
+  color: var(--white);
+  background-color: #4E92D8 !important;
+  padding: 6px 12px !important;
+}
+
+.add-wrapper {
+  margin: 10% 0 0 5%;
+  align-self: flex-start;
+}
+
+#portfolio { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .symbol {
   color: var(--white);
   font-size: 18px;
@@ -7,7 +24,6 @@
 .title {
   color: var(--white);
   font-weight: normal;
-  padding-top: 10px;
   font-family: inherit;
 }
 
@@ -15,27 +31,18 @@
   width: 90%;
   height: 30%;
   margin: 0 5%;
-  position: absolute;
-  border-radius: 10px;  
+  padding: 20px;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
-}
-
-.wallet:before {
-  content: " ";
-  position: absolute;
-  top: 0; 
-  left: 0;
-  width: 100%; 
-  height: 100%;  
-  opacity: .6; 
-  z-index: -1;
-  border-radius: 10px;  
-  background: linear-gradient(135deg, #4E92D8, #8D58CE);  
+  background: linear-gradient(135deg, #4E92D8, #8D58CE);    
 }
 
 .wallet-amount {
+  margin: 0;
   color: var(--white);
-  margin-bottom: 0;
 }
 
 .wallet-diff {

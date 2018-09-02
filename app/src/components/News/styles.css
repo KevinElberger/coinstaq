@@ -3,7 +3,7 @@
   margin: 18px;
   align-items: center;
   cursor: pointer;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .article-wrapper {

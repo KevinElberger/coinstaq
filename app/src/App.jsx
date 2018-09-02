@@ -5,11 +5,17 @@ import Header from './components/Header/Header';
 import Dashboard from './components/Dashboard/Dashboard';
 import Portfolio from './components/Portfolio/Portfolio';
 import News from './components/News/News';
+import { getCoinList } from './utils/cryptoApi';
 
 export default class App extends Component {
+  componentDidMount() {
+    getCoinList()
+      .then(r => console.log(r));
+  }
+
   render() {
     return (
-      <div id="app">
+      <div>
         <Header />
           <Switch>
             <Route exact path="/" render={() => (
