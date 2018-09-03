@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { Menu, Segment } from 'semantic-ui-react';
 import './styles.css';
 
-class Header extends Component {
+class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = { active: 'dashboard' };
@@ -47,4 +47,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default withRouter(Nav);

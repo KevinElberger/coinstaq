@@ -1,19 +1,24 @@
 import React from 'react';
 import {render} from 'react-dom';
 import { HashRouter } from 'react-router-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/index.js';
 import { Provider } from 'react-redux';
+import { createLogger } from 'redux-logger';
 import App from './App.jsx';
 import './global.css';
 
-const store = createStore(rootReducer);
+const logger = createLogger();
+const store = createStore(
+    rootReducer,
+    applyMiddleware(logger)
+);
 
 render(
-    <Provider store={store}>
-        <HashRouter>
+    <HashRouter>
+        <Provider store={store}>
             <App/>
-        </HashRouter>
-    </Provider>,
+        </Provider>
+    </HashRouter>,
     document.getElementById('app')
 )

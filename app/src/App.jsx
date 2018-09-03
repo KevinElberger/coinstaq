@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import PageWrapper from './components/PageWrapper/PageWrapper';
-import Header from './components/Header/Header';
-import Dashboard from './components/Dashboard/Dashboard';
-import Portfolio from './components/Portfolio/Portfolio';
-import News from './components/News/News';
+import Nav from './containers/Nav/Nav';
+import Dashboard from './containers/Dashboard/Dashboard';
+import Portfolio from './containers/Portfolio/Portfolio';
+import News from './containers/News/News';
 import { getCoinList } from './utils/cryptoApi';
 
 export default class App extends Component {
-  componentDidMount() {
-    getCoinList()
-      .then(r => console.log(r));
-  }
+  // componentDidMount() {
+  //   getCoinList()
+  //     .then(r => console.log(r));
+  // }
 
   render() {
     return (
       <div>
-        <Header />
+        <Nav />
           <Switch>
             <Route exact path="/" render={() => (
               <Redirect to="/dashboard" />

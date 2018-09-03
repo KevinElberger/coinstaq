@@ -3,7 +3,13 @@ export const addCoins = coins => ({
   coins
 });
 
-export const addNews = news => ({
+export const addNews = newsList => ({
   type: 'ADD_NEWS',
-  news
+  newsList,
+  time: new Date().getTime()
+});
+
+export const updateTick = time => ({
+  type: 'UPDATE_TICK',
+  time
 });
