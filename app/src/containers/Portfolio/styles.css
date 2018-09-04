@@ -13,11 +13,6 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10%;
-}
-
-.hide {
-  display: none;
 }
 
 .no-coins {
@@ -28,9 +23,11 @@
 .no-coins h1 {
   margin: 0;
   color: var(--white);
+  font-family: 'Raleway', sans-serif;
 }
 
 .no-coins p {
+  font-family: Lato;
   color: #9CA6C5;
 }
 
@@ -38,10 +35,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.show {
-  display: block;
 }
 
 .symbol {

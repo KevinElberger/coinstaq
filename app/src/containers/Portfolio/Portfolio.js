@@ -12,7 +12,7 @@ class Portfolio extends Component {
     return (
       <div id="portfolio">
         { hasCoins ?
-          <div className={ hasCoins ? 'wallet show' : 'wallet hide' }>
+          <div className="wallet">
             <h5 className="title">Your Portfolio</h5>
             <h1 className="wallet-amount">
               <span className="symbol">$</span>
@@ -32,7 +32,7 @@ class Portfolio extends Component {
           <div className="no-coins">
             <img src="../app/assets/wallet.png" />
             <h1>No Coins</h1>
-            <p>Add some coins to start tracking your portfolio!</p>
+            <p>Add coins to start tracking your portfolio!</p>
           </div>
         }
           <div className={ hasCoins ? 'add-wrapper' : 'add-wrapper-empty'}>
