@@ -5,6 +5,7 @@ import Nav from './containers/Nav/Nav';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Portfolio from './containers/Portfolio/Portfolio';
 import News from './containers/News/News';
+import CoinForm from './containers/CoinForm/CoinForm';
 import { addCoins } from './actions/index';
 import { withRouter } from 'react-router-dom';
 import { getCoinList } from './utils/cryptoApi';
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/dashboard" exact component={PageWrapper(Dashboard)} />
             <Route path="/portfolio" component={PageWrapper(Portfolio)} />
             <Route path="/news" component={PageWrapper(News)} />
+            <Route path="/add" component={PageWrapper(CoinForm)} />
           </Switch>
       </div>
     )

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Loader } from 'semantic-ui-react';
 import NewsList from '../../components/NewsList/index';
 import { withRouter } from 'react-router-dom';
-import { addNews, loadNews, updateTick } from '../../actions/index';
+import { addNews, updateTick } from '../../actions/index';
 import { shell } from 'electron';
 import { connect } from 'react-redux';
 import { getNews } from '../../utils/cryptoApi';

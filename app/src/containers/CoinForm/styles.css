@@ -1,0 +1,39 @@
+.add-coin-btn {
+  color: var(--white) !important;
+  background-color: #4E92D8 !important;
+  font-weight: normal !important;
+  margin: 5%;
+  align-self: center;
+  padding: 8px 28px !important;
+}
+
+#coin-input {
+  border: 0;
+  align-self: center;
+  margin: 10% !important;
+  color: #9CA6C5;
+  border-radius: 0;
+  background: linear-gradient(to right, #9385E8, #DD7CCE) left bottom no-repeat;
+  background-size: 100% 2px;
+}
+
+#coin-input input {
+  color: #9CA6C5 !important;
+}
+
+#coin-input i {
+  display: none !important;
+}
+
+#coin-input .default {
+  color: #9CA6C5 !important;
+}
+
+#coin-input .item span {
+  color: #9CA6C5 !important;
+}
+
+.coin-form {
+  display: flex;
+  flex-direction: column;
+}
