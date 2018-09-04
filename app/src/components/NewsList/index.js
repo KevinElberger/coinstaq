@@ -27,7 +27,7 @@ const NewsList = ({ newsList, handleLink }) => {
 NewsList.propTypes = {
   newsList: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,      
       imageurl: PropTypes.string.isRequired,

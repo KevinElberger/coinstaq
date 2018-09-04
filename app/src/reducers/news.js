@@ -1,6 +1,5 @@
 const initialState = {
   newsList: [],
-  loaded: false,
   updateTime: 0
 };
 
@@ -9,7 +8,6 @@ const news = (state = initialState, action) => {
   switch(action.type) {
     case 'ADD_NEWS':
       return Object.assign({}, state, {
-        loaded: true,
         newsList: action.newsList,
         updateTime: new Date().getTime() - (new Date().getTime() - state.updateTime)
       });

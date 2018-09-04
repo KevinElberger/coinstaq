@@ -11,6 +11,12 @@ import './styles.css';
 const prettyMs = require('pretty-ms');
 
 class News extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { loaded: false };
+    this.handleRefresh = this.handleRefresh.bind(this);
+  }
+  
   handleLink(url) {
     shell.openExternal(url);
   }
@@ -20,8 +26,11 @@ class News extends Component {
   }
 
   loadNews() {
+    this.setState({ loaded: false });
+
     getNews()
       .then(news => {
+        this.setState({ loaded: true });
         this.tick(new Date().getTime());
         this.props.dispatch(addNews(news));
       })
@@ -29,11 +38,8 @@ class News extends Component {
 
   handleRefresh() {
     const oneMinute = 60000;
-    const { updateTime } = this.props;
 
-    if (updateTime < oneMinute) return;
-
-    this.setState({ loaded: false });
+    if (this.props.updateTime < oneMinute) return;
 
     this.loadNews();
   }
@@ -51,7 +57,8 @@ class News extends Component {
   }
 
   render() {
-    const { loaded, newsList } = this.props;
+    const { loaded } = this.state;
+    const { newsList } = this.props;
     const updateTime = prettyMs(this.props.updateTime, { verbose: true });
 
     return (
@@ -65,7 +72,6 @@ class News extends Component {
         { loaded ?
           <NewsList 
             newsList={newsList}
-            loaded={loaded}
             handleLink={this.handleLink}
           />
           :
