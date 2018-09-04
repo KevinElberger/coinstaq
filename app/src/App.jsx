@@ -6,6 +6,7 @@ import Dashboard from './containers/Dashboard/Dashboard';
 import Portfolio from './containers/Portfolio/Portfolio';
 import News from './containers/News/News';
 import { addCoins } from './actions/index';
+import { withRouter } from 'react-router-dom';
 import { getCoinList } from './utils/cryptoApi';
 import { connect } from 'react-redux';
 
@@ -34,4 +35,4 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+export default withRouter(connect()(App));

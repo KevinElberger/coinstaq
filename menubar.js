@@ -42,7 +42,7 @@ module.exports = function create(opts) {
     // Hide dock unless specified via options
     if (app.dock && !opts.showDockIcon) app.dock.hide();
 
-    const iconPath = opts.icon || path.join(opts.dir, 'icon.png');
+    const iconPath = path.join(app.getAppPath(), 'app/icon.png');
 
     let cachedBounds; // Needed for double-clicks
     const defaultClickEvent = opts.showOnRightClick ? 'right-click' : 'click';
