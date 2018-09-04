@@ -5,13 +5,17 @@ import Nav from './containers/Nav/Nav';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Portfolio from './containers/Portfolio/Portfolio';
 import News from './containers/News/News';
+import { addCoins } from './actions/index';
 import { getCoinList } from './utils/cryptoApi';
+import { connect } from 'react-redux';
 
-export default class App extends Component {
-  // componentDidMount() {
-  //   getCoinList()
-  //     .then(r => console.log(r));
-  // }
+class App extends Component {
+  componentDidMount() {
+    getCoinList()
+      .then(list => {
+        this.props.dispatch(addCoins(list));
+      });
+  }
 
   render() {
     return (
@@ -29,3 +33,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default connect()(App);

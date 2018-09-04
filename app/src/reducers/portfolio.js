@@ -1,10 +1,17 @@
 const initialState = {
   profit: false,
-  coinList: []
+  portfolioCoins: []
 };
 
 const portfolio = (state = initialState, action) => {
-  return state;
+  switch(action) {
+    case 'MONITOR_COIN':
+      return Object.assign({}, state, {
+        portfolioCoins: [...state.portfolioCoins, action.coin]
+      });
+    default:
+      return state;
+  }
 };
 
 export default portfolio;

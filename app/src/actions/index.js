@@ -3,6 +3,11 @@ export const addCoins = coins => ({
   coins
 });
 
+export const monitorCoin = coin => ({
+  type: 'MONITOR_COIN',
+  coin
+});
+
 export const addNews = newsList => ({
   type: 'ADD_NEWS',
   newsList,
