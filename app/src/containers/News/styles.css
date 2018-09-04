@@ -61,6 +61,8 @@
 
 .news-last-updated {
   font-size: 10px;
+  width: 200px;
+  text-align: left;
   color: #9CA6C5 !important;
 }
 

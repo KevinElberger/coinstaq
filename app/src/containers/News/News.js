@@ -46,7 +46,7 @@ class News extends Component {
     }
     
     this.tickID = setInterval(() => {      
-      updateTick(updateTime);
+      this.props.dispatch(updateTick(oneMinute));
     }, oneMinute);
   }
 
