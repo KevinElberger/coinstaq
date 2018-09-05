@@ -7,10 +7,21 @@
   padding: 8px 28px !important;
 }
 
+#amount {
+  background: transparent;
+  border: 0;
+  color: white;
+  border-radius: 0;
+  font-size: 28px;
+  text-align: center;
+  width: 150px;
+  align-self: center;
+}
+
 #coin-input {
   border: 0;
   align-self: center;
-  margin: 10% !important;
+  margin: 0 10% 10% !important;  
   color: #9CA6C5;
   border-radius: 0;
   background: linear-gradient(to right, #9385E8, #DD7CCE) left bottom no-repeat;
@@ -19,6 +30,12 @@
 
 #coin-input input {
   color: #9CA6C5 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 #coin-input i {
@@ -35,5 +52,29 @@
 
 .coin-form {
   display: flex;
+  min-height: 100%;
   flex-direction: column;
+}
+
+.coin-form > div {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.crypto-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.crypto-wrapper {
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#spacer {
+  margin-top: 40%;
 }

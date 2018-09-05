@@ -1,4 +1,5 @@
 const axios = require('axios');
+import iconList from './cryptoIconList';
 const rootURL = 'https://min-api.cryptocompare.com/data/';
 
 export function getNews() {
@@ -10,7 +11,7 @@ export function getNews() {
 }
 
 /**
- * Returns the top 30 cryptocurrencies by market value
+ * Returns a list of cryptocurrencies
  */
 export function getCoinList() {
   return axios.get(rootURL + 'all/coinlist')
@@ -18,15 +19,18 @@ export function getCoinList() {
       let coins = Object.keys(response.data.Data).map(key => {
         return response.data.Data[key];
       });
+      const symbols = iconList.map(icon => icon.symbol);
       
+      // Only get cryptos that we have icons for
       coins = coins.filter(coin => {
-        return Number(coin.SortOrder) <= 30;
+        return symbols.includes(coin.Symbol);
       });
 
       return Object.keys(coins).map(coin => {
         return {
           name: coins[coin].Name,
           symbol: coins[coin].Symbol,
+          image: coins[coin].ImageUrl,
           coinName: coins[coin].CoinName,
           fullName: coins[coin].FullName
         };
