@@ -1,6 +1,6 @@
 #add {
   color: var(--white);
-  background-color: #4E92D8 !important;
+  background-image: linear-gradient(to left, #75a6ff, #7084ff) !important;
   padding: 6px 12px !important;
 }
 
@@ -28,7 +28,7 @@
 
 .no-coins p {
   font-family: Lato;
-  color: #9CA6C5;
+  color: #918cc7;
 }
 
 #portfolio { 

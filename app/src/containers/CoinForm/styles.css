@@ -8,46 +8,52 @@
 }
 
 #amount {
-  background: transparent;
-  border: 0;
-  color: white;
+  border: none;
   border-radius: 0;
-  font-size: 28px;
-  text-align: center;
-  width: 150px;
+  border-bottom: 2px solid #664ae8;
+}
+
+#card-amount-wrapper {
+  width: 100%;
+}
+
+#coin-card {
+  width: 90%;
   align-self: center;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+}
+
+#coin-card .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#coin-image {
+  width: 32px;
+  margin: 0 10px;
+  align-self: center;
+  height: 32px;
 }
 
 #coin-input {
   border: 0;
   align-self: center;
-  margin: 0 10% 10% !important;  
-  color: #9CA6C5;
+  font-size: 18px;
+  line-height: 1.2em;
+  font-weight: bold;
+  color: #161616;
   border-radius: 0;
-  background: linear-gradient(to right, #9385E8, #DD7CCE) left bottom no-repeat;
-  background-size: 100% 2px;
+  box-shadow: none;
 }
 
-#coin-input input {
-  color: #9CA6C5 !important;
+#coin-input .text {
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-}
-
-#coin-input i {
-  display: none !important;
-}
-
-#coin-input .default {
-  color: #9CA6C5 !important;
-}
-
-#coin-input .item span {
-  color: #9CA6C5 !important;
 }
 
 .coin-form {

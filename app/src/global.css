@@ -2,7 +2,9 @@
  * Global constants goes here
  */
 :root {
-    --primary-color: #282F47;
+    --primary-color: #3a3361;
+    --secondary-color: #918cc7;    
+    /* --primary-color: #282F47; */
     --white: #FFFFFF;
 }
 
