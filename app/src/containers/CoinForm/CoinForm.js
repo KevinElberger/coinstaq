@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { Dropdown, Button, Card, Image, Input } from 'semantic-ui-react';
 import './styles.css';
@@ -9,9 +10,15 @@ class CoinForm extends Component {
     super(props);
     this.state = {
       coin: 'btc',
+      goBack: false,
       coinSelected: false
     };
+    this.handleGoBack = this.handleGoBack.bind(this);
     this.handleDropdown = this.handleDropdown.bind(this);
+  }
+
+  handleGoBack() {
+    this.setState({ goBack: true });
   }
 
   handleDropdown(event, target) {
@@ -25,6 +32,9 @@ class CoinForm extends Component {
   }
 
   render() {
+    if (this.state.goBack) {
+      return <Redirect to="/portfolio" />
+    }
     const { coin, coinSelected } = this.state;
     const options = this.props.coinList.map(coin => {
       return { key:coin.name, text: coin.fullName, value: coin.symbol };
@@ -57,12 +67,15 @@ class CoinForm extends Component {
               labelPosition='right'
             />
           </Card.Content>
-          <Card.Content>
-            <Button fluid className='add-coin-btn'>
-              Add Coin
-            </Button>
-          </Card.Content>
         </Card>
+        <div className='buttons-row'>
+          <Button id='cancel-btn' onClick={ this.handleGoBack }>
+            Go Back
+          </Button>
+          <Button className='add-coin-btn'>
+            Add Coin
+          </Button>
+        </div>
       </div>
     );
   }

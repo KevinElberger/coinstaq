@@ -1,7 +1,7 @@
 #add {
   color: var(--white);
   background-image: linear-gradient(to left, #75a6ff, #7084ff) !important;
-  padding: 6px 12px !important;
+  padding: 10px 12px !important;
 }
 
 .add-wrapper {

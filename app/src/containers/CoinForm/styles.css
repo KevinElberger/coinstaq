@@ -2,15 +2,32 @@
   color: var(--white) !important;
   background-color: #4E92D8 !important;
   font-weight: normal !important;
-  margin: 5%;
   align-self: center;
-  padding: 8px 28px !important;
+  margin: 0 !important;
+  width: 44%;
+  background-image: linear-gradient(to left, #75a6ff, #7084ff) !important;
+  padding: 14px 12px !important;
 }
 
 #amount {
   border: none;
   border-radius: 0;
   border-bottom: 2px solid #664ae8;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: space-around !important;
+  flex-direction: row !important;
+}
+
+#cancel-btn {
+  margin: 0 !important;
+  font-weight: normal;
+  border-radius: 10px;
+  border: 2px solid #2e284c;
+  color: var(--secondary-color);
+  background: var(--primary-color);
 }
 
 #card-amount-wrapper {
