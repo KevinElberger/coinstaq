@@ -1,0 +1,16 @@
+{
+  "name": "coinstaq-chat",
+  "version": "1.0.0",
+  "description": "A simple chat client using socket.io",
+  "main": "server.js",
+  "author": "Kevin Elberger",
+  "private": false,
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.13.4",
+    "socket.io": "2.0.4"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
