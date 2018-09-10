@@ -10,7 +10,7 @@ const ChatBox = (props) => {
       <div>
         <Input 
           id='message' 
-          icon='paper plane' 
+          icon='paper plane'
           placeholder='Type a message' 
         />
       </div>

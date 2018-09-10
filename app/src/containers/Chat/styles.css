@@ -13,6 +13,16 @@
 }
 
 #message {
+  color: #918cc7;
   margin-top: auto;
   justify-self: flex-end;
+  background: #2e284c;
+}
+
+input:focus {
+  border: 1px solid #060024 !important;
+}
+
+input::placeholder {
+  color: #918cc7 !important;
 }

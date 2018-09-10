@@ -18,6 +18,8 @@ class Chat extends Component {
     const { endpoint } = this.state;
     const socket = io.connect(endpoint);
 
+    socket.emit('add user', 'testAcc');
+    
     socket.on('login', (data) => {
       console.log(data);
     });
