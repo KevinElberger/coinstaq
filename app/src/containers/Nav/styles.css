@@ -23,26 +23,30 @@
 }
 
 #nav a:not(.last) {
-  width: 33.33%;
+  width: 25%;
   padding: 12px 0 !important;
   text-align: center;
   display: inline-block;
 }
 
 #nav .selected:nth-child(1) ~ .item:last-child {
-  margin-left: 6% !important;
+  margin-left: 4% !important;
 }
 
 #nav .selected:nth-child(2) ~ .item:last-child {
-  margin-left: 40% !important;
+  margin-left: 28% !important;
 }
 
 #nav .selected:nth-child(3) ~ .item:last-child {
-  margin-left: 73% !important;
+  margin-left: 54% !important;
+}
+
+#nav .selected:nth-child(4) ~ .item:last-child {
+  margin-left: 78% !important;
 }
 
 #nav a:last-child {
-  width: 20%;
+  width: 18%;
   height: 3px !important;
   margin: 0 !important;
   padding: 0 !important;

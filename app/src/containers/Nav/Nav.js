@@ -40,6 +40,12 @@ class Nav extends Component {
             className={active === 'news' ? 'selected' : 'link' }                      
             name='news'
           />
+          <Menu.Item
+            onClick={this.handleOnClick}
+            active={active === 'chat'}
+            className={active === 'chat' ? 'selected' : 'link' }            
+            name='chat'
+          />
           <a className='link item last'></a>
         </Menu>
       </div>

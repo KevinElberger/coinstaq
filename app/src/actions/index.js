@@ -18,3 +18,8 @@ export const updateTick = time => ({
   type: 'UPDATE_TICK',
   time
 });
+
+export const addMessages = messages => ({
+  type: 'ADD_MESSAGES',
+  messages
+});

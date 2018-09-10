@@ -1,0 +1,18 @@
+#chat {
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-window {
+  height: 350px;
+}
+
+#message {
+  margin-top: auto;
+  justify-self: flex-end;
+}
