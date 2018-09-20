@@ -9,7 +9,7 @@ class CoinForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      coin: 'btc',
+      coin: null,
       goBack: false,
       coinSelected: false
     };
@@ -44,36 +44,40 @@ class CoinForm extends Component {
 
     return (
       <div className='coin-form'>
-        <Card id='coin-card'>
-          <Card.Content>
-            <Image id='coin-image' size='mini' src={imageUrl} />
-            <Dropdown 
-              search
-              floating
-              selection
-              compact
-              id='coin-input'
-              options={ options }
-              onChange={ this.handleDropdown }
-              placeholder='Search for a coin'
-            />
-          </Card.Content>
-          <Card.Content extra id='card-amount-wrapper'>
-            <Input 
-              id='amount'
-              size='small' 
-              type='number' 
-              label={{ basic: true, content: 'BTC' }}
-              labelPosition='right'
-            />
-          </Card.Content>
-        </Card>
+        <div className='coin-content-wrapper'>
+          <Card id='coin-card' className={ coin !== null ? 'slide-in-top' : 'hidden'}>
+            <Image size='mini' src={imageUrl} />
+          </Card>
+          <div className='coin-input-wrapper'>
+            <div>
+              <label id='label-coin' for='coin-input'>Coin Name</label>
+              <Dropdown 
+                search
+                selection
+                id='coin-input'
+                options={ options }
+                onChange={ this.handleDropdown }
+                placeholder='Search for a coin'
+              />
+            </div>
+            <div className='amount-row'>
+            <label id='amount-label' for='amount'>Amount</label>
+              <Input
+                id='amount'
+                size='small' 
+                type='number'
+                placeholder={ 0 }
+              />
+            </div>
+          </div>
+        </div>
+
         <div className='buttons-row'>
+         <Button className='add-coin-btn'>
+            Add Coin
+          </Button>
           <Button id='cancel-btn' onClick={ this.handleGoBack }>
             Go Back
-          </Button>
-          <Button className='add-coin-btn'>
-            Add Coin
           </Button>
         </div>
       </div>

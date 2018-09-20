@@ -10,7 +10,8 @@ class Chat extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      endpoint: 'http://ec2-18-221-55-185.us-east-2.compute.amazonaws.com:3000'
+      // endpoint: 'http://ec2-18-221-55-185.us-east-2.compute.amazonaws.com:3000'
+      endpoint: 'http://localhost:3000'
     };
   }
 
