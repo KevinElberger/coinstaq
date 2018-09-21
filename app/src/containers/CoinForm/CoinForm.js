@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import { Dropdown, Button, Card, Image, Input } from 'semantic-ui-react';
+import { Dropdown, Button, Card, Image, Input, Icon, Divider } from 'semantic-ui-react';
 import './styles.css';
 
 class CoinForm extends Component {
@@ -14,14 +14,14 @@ class CoinForm extends Component {
       coinSelected: false
     };
     this.handleGoBack = this.handleGoBack.bind(this);
-    this.handleDropdown = this.handleDropdown.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleGoBack() {
     this.setState({ goBack: true });
   }
 
-  handleDropdown(event, target) {
+  handleChange(event, target) {
     // Use lowercase to match crypto icon filename
     const value = target.value.toLowerCase();
     
@@ -44,41 +44,25 @@ class CoinForm extends Component {
 
     return (
       <div className='coin-form'>
-        <div className='coin-content-wrapper'>
-          <Card id='coin-card' className={ coin !== null ? 'slide-in-top' : 'hidden'}>
-            <Image size='mini' src={imageUrl} />
-          </Card>
-          <div className='coin-input-wrapper'>
-            <div>
-              <label id='label-coin' for='coin-input'>Coin Name</label>
-              <Dropdown 
-                search
-                selection
-                id='coin-input'
-                options={ options }
-                onChange={ this.handleDropdown }
-                placeholder='Search for a coin'
-              />
-            </div>
-            <div className='amount-row'>
-            <label id='amount-label' for='amount'>Amount</label>
-              <Input
-                id='amount'
-                size='small' 
-                type='number'
-                placeholder={ 0 }
-              />
-            </div>
-          </div>
+        <div className='coin-form-header'>
+          <h3>Add Coin to Portfolio</h3>
         </div>
-
-        <div className='buttons-row'>
-         <Button className='add-coin-btn'>
-            Add Coin
-          </Button>
-          <Button id='cancel-btn' onClick={ this.handleGoBack }>
-            Go Back
-          </Button>
+        <div className='search-wrapper'>
+          <Input
+            id='search'
+            size='small' 
+            type='text'
+            iconPosition='left'
+            onChange={ this.handleChange }
+            placeholder='Search'
+          >
+            <Icon name='search' />
+            <input />
+          </Input>
+        </div>
+        <div className='search-results'>
+          <p className='search-results-header'>Search Results</p>
+          <Divider />
         </div>
       </div>
     );
