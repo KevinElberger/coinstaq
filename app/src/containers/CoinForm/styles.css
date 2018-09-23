@@ -141,7 +141,7 @@ input::-webkit-inner-spin-button {
 .coin-form {
   display: flex;
   min-height: 100%;
-  height: 400px;
+  height: 395px;
   flex-direction: column;
 }
 
@@ -163,9 +163,44 @@ input::-webkit-inner-spin-button {
   height: 32px;
 }
 
+.coin-list-amount input {
+  width: 120px !important;
+  margin: 6px auto !important;
+  color: #918cc7 !important;
+  border: none !important;
+  background: #2e284c !important;
+  line-height: 1.21428571em;
+  padding: .78571429em 2.1em .78571429em 1em;
+}
+
+.coin-list-item input:focus {
+  border: none !important;
+}
+
 .coin-list-item {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.coin-list-item button {
+  background: linear-gradient(to left, #75a6ff, #7084ff) !important;
+}
+
+.coin-list-item button i::before {
+  content: "+" !important;
+  font-weight: bold;
+  color: white;
+}
+
+.coin-list-item img {
+  width: 32px;
+  height: 32px;
+}
+
+.coin-list-item p {
+  margin: 0;
+  color: #918cc7;
 }
 
 .crypto-wrapper {
@@ -185,6 +220,10 @@ input::-webkit-inner-spin-button {
   margin-left: 8%;
 }
 
+.no-results {
+  color: #918cc7;
+}
+
 #search {
   width: 268px !important;
   margin: 0 auto;
@@ -202,13 +241,18 @@ input::-webkit-inner-spin-button {
 }
 
 .search-results {
-  margin: 18px;
+  margin: 0 18px;
+  overflow-y: scroll;
 }
 
 .search-results-header {
+  margin: 18px 18px 0 !important;  
+}
+
+.search-results-header p {
   text-align: left;
   font-size: 12px;
-  color: #9CA6C5;
+  color: #918cc7;
 }
 
 .slide-in-top {

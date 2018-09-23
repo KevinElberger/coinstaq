@@ -14,6 +14,8 @@ export function getNews() {
  * Returns a list of cryptocurrencies
  */
 export function getCoinList() {
+  const imageDir = '../node_modules/cryptocurrency-icons/32/color/';
+  
   return axios.get(rootURL + 'all/coinlist')
     .then(response => {
       let coins = Object.keys(response.data.Data).map(key => {
@@ -30,7 +32,7 @@ export function getCoinList() {
         return {
           name: coins[coin].Name,
           symbol: coins[coin].Symbol,
-          image: coins[coin].ImageUrl,
+          image: imageDir + coins[coin].Symbol + '.png',
           coinName: coins[coin].CoinName,
           fullName: coins[coin].FullName
         };

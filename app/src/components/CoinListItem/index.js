@@ -1,21 +1,24 @@
 import React from 'react';
 import { Input, Button } from 'semantic-ui-react';
 
-const CoinListItem = (props) => {
+const CoinListItem = (CoinItem) => {
+  const { props } = CoinItem;
+
   return (
     <div className='coin-list-item'>
       <img src={ props.image } />
       <p>
-        { props.fullName } 
-        <span>{ props.symbol }</span>
+        { props.symbol }
       </p>
-      <Input 
-        icon='paper plane'
-        placeholder='Enter # of coins to add' 
+      <Input
+        size='small'
+        type='number' 
+        className='coin-list-amount' 
+        placeholder='# of coins' 
       />
       <Button icon='plus' />
     </div>
   );
 };
 
-export default ChatBox;
+export default CoinListItem;

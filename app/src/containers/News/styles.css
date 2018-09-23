@@ -42,7 +42,7 @@
 .news-articles-wrapper {
   width: 100%;
   height: 332px;
-  overflow: scroll;
+  overflow-y: scroll;
   position: fixed;
 }
 

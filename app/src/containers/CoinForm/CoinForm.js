@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import CoinListItem from '../../components/CoinListItem/index';
 import { Dropdown, Button, Card, Image, Input, Icon, Divider } from 'semantic-ui-react';
 import './styles.css';
 
@@ -9,16 +10,9 @@ class CoinForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      coin: null,
-      goBack: false,
-      coinSelected: false
+      coin: '',
     };
-    this.handleGoBack = this.handleGoBack.bind(this);
     this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleGoBack() {
-    this.setState({ goBack: true });
   }
 
   handleChange(event, target) {
@@ -26,21 +20,18 @@ class CoinForm extends Component {
     const value = target.value.toLowerCase();
     
     this.setState({
-      coin: value,
-      coinSelected: true
+      coin: value
     });
   }
 
   render() {
-    if (this.state.goBack) {
-      return <Redirect to="/portfolio" />
-    }
-    const { coin, coinSelected } = this.state;
-    const options = this.props.coinList.map(coin => {
-      return { key:coin.name, text: coin.fullName, value: coin.symbol };
+    const { coin } = this.state;
+    const filteredCoins = this.props.coinList.filter(coinObj => {
+      return coinObj.fullName.toLowerCase().indexOf(coin.toLowerCase()) > -1;
     });
-    const defaultVal = options.find(coin => coin.name === 'Bitcoin');
-    const imageUrl = '../node_modules/cryptocurrency-icons/32/black/' + coin + '.png';
+    const coinList = filteredCoins.map(coin => {
+      return (<CoinListItem key={coin.fullName} props={coin} />);      
+    });
 
     return (
       <div className='coin-form'>
@@ -50,7 +41,7 @@ class CoinForm extends Component {
         <div className='search-wrapper'>
           <Input
             id='search'
-            size='small' 
+            size='small'
             type='text'
             iconPosition='left'
             onChange={ this.handleChange }
@@ -60,10 +51,15 @@ class CoinForm extends Component {
             <input />
           </Input>
         </div>
-        <div className='search-results'>
-          <p className='search-results-header'>Search Results</p>
+        <div className='search-results-header'>
+          <p>Search Results</p>
           <Divider />
         </div>
+        {
+          (coin !== '' && coinList.length > 0)
+          ? (<div className='search-results'> { coinList } </div>)
+          : (<p className='no-results'>No coins found.</p>)
+        }
       </div>
     );
   }
